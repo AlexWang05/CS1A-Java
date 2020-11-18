@@ -46,6 +46,36 @@ public class ProductTester {
 	}// end main method
 	
 	
+	// executeMenuChoice method
+	// @param menu choice, products array, Scanner object
+	public static void executeMenuChoice(int choice, Product[] products, 
+			Scanner input) {
+		
+		// switch statement to test choices
+		switch (choice) {
+			case 1:
+				System.out.println("View Product List");
+				displayInventory(products);
+				break;
+			case 2:
+				System.out.println("Add Stock");
+				addInventory(products, input);
+				break;
+			case 3:
+				System.out.println("Deduct Stock");
+				deductInventory(products, input);
+				break;
+			case 4:
+				System.out.println("Discontinue Stock");
+				discontinueInventory(products, input);
+				break;
+		}
+				
+	} // end executeMenuChoice()
+	
+	
+	
+	
 	// getMenuOption method (menu system)
 	// @param Scanner object
 	// @return integer menu choice chosen by user
@@ -61,7 +91,7 @@ public class ProductTester {
 		} while (choice < 0 || choice > 4);
 		
 		return choice;
-	}
+	} // end getMenuOption()
 	
 	
 	// getProductNumber method (displays index of array and name of products)
@@ -75,20 +105,19 @@ public class ProductTester {
 			System.out.println(i + ": " + products[i]);
 		}
 		
+		// do-while loop to prompt information and validate input
+		do {
 		// getting user input
 		System.out.println("Please enter the item number of the "
 				+ "product you want to update: ");
 		productChoice = input.nextInt();
 		
 		// choice input validation
-		while (productChoice < 0 || productChoice > products.length - 1) {
-			System.out.println("Invalid Item number\nPlease enter the item"
-					+ " number of the product you want to update: ");
-			productChoice = input.nextInt();
-		}
+		} while (productChoice < 0 || productChoice > products.length - 1);
+		
 		
 		return productChoice;
-	}
+	} // end getProductNumber()
 	
 	
 	// addInventory method (add stock values to product)
@@ -99,19 +128,17 @@ public class ProductTester {
 		// calls getProductNumber method and saves to productChoice
 		productChoice = getProductNumber(products, input);
 		
+		
+		// do-while loop to prompt info and validate input
+		do {
 		System.out.println("How many products do you want to add? ");
 		updateValue = input.nextInt();
 		
-		// update value input validation
-		while (updateValue < 0) {
-			System.out.println("Invalid Update Value\nHow many products"
-					+ " do you want to add? ");
-			updateValue = input.nextInt();
-		}
+		} while (updateValue < 0);
 		
 		// adds value to stock
 		products[productChoice].addToInventory(updateValue);
-	}
+	} // end addInventory()
 	
 	
 	// deductInventory method (deduct values to product)
@@ -122,19 +149,28 @@ public class ProductTester {
 		// calls getProductNumber method and saves to productChoice
 		productChoice = getProductNumber(products, input);
 		
+		// prompts info and validates input
+		do {
 		System.out.println("How many products do you want to deduct? ");
 		updateValue = input.nextInt();
 		
-		// update value input validation //BUG
-		while (updateValue < 0 || updateValue > Product.getQtyInStock()) {
-			System.out.println("Invalid Update Value\nHow many products"
-					+ " would you want to deduct? ");
-			updateValue = input.nextInt();
-		}
+		} while (updateValue < 0 || updateValue > products[productChoice].getQtyInStock());
 		
 		// deducts value from stock
 		products[productChoice].deductFromInventory(updateValue);
-	}
+	} // end deductInventory()
+	
+	
+	// discontinueInventory method to mark stock as discontinued
+	// @param products array and Scanner object
+	public static void discontinueInventory(Product[] products, Scanner input) {
+		int productChoice;
+		
+		productChoice = getProductNumber(products, input);
+		
+		// use setActive() method to set active value to false
+		products[productChoice].setActive(false);
+	} // end discontinueInventory()
 	
 	
 	

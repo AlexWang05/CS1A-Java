@@ -1,6 +1,6 @@
 /*
 * Class: CS1A
-* Description: Assignment 8: An inventory program used to
+* Description: Assignment 9: An inventory program used to
 * 	store a range of differet products
 * Due date: 11/16/2020
 * Name: Zhaozhong (Alex) Wang

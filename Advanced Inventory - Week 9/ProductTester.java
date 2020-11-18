@@ -1,6 +1,6 @@
 /*
 * Class: CS1A
-* Description: Assignment 8: An inventory program used to
+* Description: Assignment 9: An inventory program used to
 * 	store a range of differet products
 * Due date: 11/16/2020
 * Name: Zhaozhong (Alex) Wang
@@ -12,11 +12,12 @@ import java.util.Scanner;
 public class ProductTester {
 
 	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in); // Scanner object
+		
 		// variable declaration
-		int maxSize;
-				
-		Scanner input = new Scanner(System.in);
-
+		int maxSize, menuChoice;
+		
+		
 		// information prompt and input validation
 		do {
 			System.out.println("Enter the number of products you would like to add or"
@@ -39,9 +40,11 @@ public class ProductTester {
 			// addToInventory method to get inventory input
 			addToInventory(products, input);
 			
-			// displayInventory method to display inventory
-			displayInventory(products);
-		}
+			do {
+				menuChoice = getMenuOption(input);
+				executeMenuChoice(menuChoice, products, input);
+			} while (menuChoice != 0);
+		} // end else
 		
 	}// end main method
 	
@@ -73,9 +76,7 @@ public class ProductTester {
 				
 	} // end executeMenuChoice()
 	
-	
-	
-	
+
 	// getMenuOption method (menu system)
 	// @param Scanner object
 	// @return integer menu choice chosen by user
@@ -85,8 +86,8 @@ public class ProductTester {
 		// do-while loop that displays menu and validates input
 		do {
 		// displays menu
-		System.out.println("1) View Inventory\n2) Add Stock\n3) Deduct Stock"
-				+ "\n4) Discontinue Product\n0. Exit\nPlease enter a menu opotion:");
+		System.out.println("\n1. View Inventory\n2. Add Stock\n3. Deduct Stock"
+				+ "\n4. Discontinue Product\n0. Exit\nPlease enter a menu option:");
 		choice = input.nextInt();
 		} while (choice < 0 || choice > 4);
 		
@@ -102,7 +103,7 @@ public class ProductTester {
 		
 		// for-loop to display index value and product name
 		for (int i = 0; i < products.length; i++) {
-			System.out.println(i + ": " + products[i]);
+			System.out.println(i + ": " + products[i].getName());
 		}
 		
 		// do-while loop to prompt information and validate input
@@ -172,8 +173,7 @@ public class ProductTester {
 		products[productChoice].setActive(false);
 	} // end discontinueInventory()
 	
-	
-	
+
 	// addToInventory method (adds products to inventory)
 	// @param products array and Scanner
 	public static void addToInventory(Product[] products, Scanner input) {
@@ -216,65 +216,190 @@ public class ProductTester {
 	
 	/*
 	 * --------SAMPLE RUN----------
-	 * Enter the number of products you would like to add or
-	 * Enter 0 (zero) if you do not wish to add products:
-	 * -1
-	 * Incorrect Value entered!
-	 * Enter the number of products you would like to add or
-	 * Enter 0 (zero) if you do not wish to add products:
-	 * 3
-	 * 
-	 * Please enter the product name: 
-	 * Microphone
-	 * Please enter the quantity of stock for this product: 
-	 * 13
-	 * Please enter the price for this product: 
-	 * 16.99
-	 * Please enter the item number: 
-	 * 1
-	 * 
-	 * Please enter the product name: 
-	 * Book
-	 * Please enter the quantity of stock for this product: 
-	 * 44
-	 * Please enter the price for this product: 
-	 * 5.89
-	 * Please enter the item number: 
-	 * 3
-	 * 
-	 * Please enter the product name: 
-	 * Calculator
-	 * Please enter the quantity of stock for this product: 
-	 * 100
-	 * Please enter the price for this product: 
-	 * 25.05
-	 * Please enter the item number: 
-	 * 5
-	 * 
-	 * 
-	 * Item Number : 1
-	 * Name : Microphone
-	 * Quantity in stock: 13
-	 * Price : 16.99
-	 * Stock Value : 220.86999999999998
-	 * Product Status : Active
-	 * 
-	 * 
-	 * Item Number : 3
-	 * Name : Book
-	 * Quantity in stock: 44
-	 * Price : 5.89
-	 * Stock Value : 259.15999999999997
-	 * Product Status : Active
-	 * 
-	 * 
-	 * Item Number : 5
-	 * Name : Calculator
-	 * Quantity in stock: 100
-	 * Price : 25.05
-	 * Stock Value : 2505.0
-	 * Product Status : Active
-	 * 
+	 *Enter the number of products you would like to add or
+	 *Enter 0 (zero) if you do not wish to add products:
+	 *3
+	 *
+	 *Please enter the product name: 
+	 *Book
+	 *Please enter the quantity of stock for this product: 
+	 *20
+	 *Please enter the price for this product: 
+	 *15
+	 *Please enter the item number: 
+	 *1
+	 *
+	 *Please enter the product name: 
+	 *Microphone
+	 *Please enter the quantity of stock for this product: 
+	 *5
+	 *Please enter the price for this product: 
+	 *12.99
+	 *Please enter the item number: 
+	 *2
+	 *
+	 *Please enter the product name: 
+	 *Tape
+	 *Please enter the quantity of stock for this product: 
+	 *15
+	 *Please enter the price for this product: 
+	 *3.99
+	 *Please enter the item number: 
+	 *3
+	 *
+	 *1. View Inventory
+	 *2. Add Stock
+	 *3. Deduct Stock
+	 *4. Discontinue Product
+	 *0. Exit
+	 *Please enter a menu option:
+	 *1
+	 *View Product List
+	 *
+	 *
+	 *Item Number : 1
+	 *Name : Book
+	 *Quantity in stock: 20
+	 *Price : 15.0
+	 *Stock Value : 300.0
+	 *Product Status : Active
+	 *
+	 *
+	 *Item Number : 2
+	 *Name : Microphone
+	 *Quantity in stock: 5
+	 *Price : 12.99
+	 *Stock Value : 64.95
+	 *Product Status : Active
+	 *
+	 *
+	 *Item Number : 3
+	 *Name : Tape
+	 *Quantity in stock: 15
+	 *Price : 3.99
+	 *Stock Value : 59.85
+	 *Product Status : Active
+	 *
+	 *1. View Inventory
+	 *2. Add Stock
+	 *3. Deduct Stock
+	 *4. Discontinue Product
+	 *0. Exit
+	 *Please enter a menu option:
+	 *2
+	 *Add Stock
+	 *0: Book
+	 *1: Microphone
+	 *2: Tape
+	 *Please enter the item number of the product you want to update: 
+	 *0
+	 *How many products do you want to add? 
+	 *25
+	 *
+	 *1. View Inventory
+	 *2. Add Stock
+	 *3. Deduct Stock
+	 *4. Discontinue Product
+	 *0. Exit
+	 *Please enter a menu option:
+	 *1
+	 *View Product List
+	 *
+	 *
+	 *Item Number : 1
+	 *Name : Book
+	 *Quantity in stock: 45
+	 *Price : 15.0
+	 *Stock Value : 675.0
+	 *Product Status : Active
+	 *
+	 *
+	 *Item Number : 2
+	 *Name : Microphone
+	 *Quantity in stock: 5
+	 *Price : 12.99
+	 *Stock Value : 64.95
+	 *Product Status : Active
+	 *
+	 *
+	 *Item Number : 3
+	 *Name : Tape
+	 *Quantity in stock: 15
+	 *Price : 3.99
+	 *Stock Value : 59.85
+	 *Product Status : Active
+	 *
+	 *1. View Inventory
+	 *2. Add Stock
+	 *3. Deduct Stock
+	 *4. Discontinue Product
+	 *0. Exit
+	 *Please enter a menu option:
+	 *3
+	 *Deduct Stock
+	 *0: Book
+	 *1: Microphone
+	 *2: Tape
+	 *Please enter the item number of the product you want to update: 
+	 *0
+	 *How many products do you want to deduct? 
+	 *10
+	 *
+	 *1. View Inventory
+	 *2. Add Stock
+	 *3. Deduct Stock
+	 *4. Discontinue Product
+	 *0. Exit
+	 *Please enter a menu option:
+	 *4
+	 *Discontinue Stock
+	 *0: Book
+	 *1: Microphone
+	 *2: Tape
+	 *Please enter the item number of the product you want to update: 
+	 *1
+	 *
+	 *1. View Inventory
+	 *2. Add Stock
+	 *3. Deduct Stock
+	 *4. Discontinue Product
+	 *0. Exit
+	 *Please enter a menu option:
+	 *1
+	 *View Product List
+	 *
+	 *
+	 *Item Number : 1
+	 *Name : Book
+	 *Quantity in stock: 35
+	 *Price : 15.0
+	 *Stock Value : 525.0
+	 *Product Status : Active
+	 *
+	 *
+	 *Item Number : 2
+	 *Name : Microphone
+	 *Quantity in stock: 5
+	 *Price : 12.99
+	 *Stock Value : 64.95
+	 *Product Status : Discontinued
+	 *
+	 *
+	 *Item Number : 3
+	 *Name : Tape
+	 *Quantity in stock: 15
+	 *Price : 3.99
+	 *Stock Value : 59.85
+	 *Product Status : Active
+	 *
+	 *1. View Inventory
+	 *2. Add Stock
+	 *3. Deduct Stock
+	 *4. Discontinue Product
+	 *0. Exit
+	 *Please enter a menu option:
+	 *0
+	 *
 	 */
 	
 }// end class ProductTaster

@@ -1,7 +1,7 @@
 /*
 * Class: CS1A
 * Description: Assignment 9: An inventory program used to
-* 	store a range of differet products
+* 	store a range of different products
 * Due date: 11/16/2020
 * Name: Zhaozhong (Alex) Wang
 * File names: Product.java and ProductTester.java

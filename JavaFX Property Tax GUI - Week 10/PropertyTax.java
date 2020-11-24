@@ -84,7 +84,7 @@ public class PropertyTax extends Application {
 		
 		primaryStage.show();
 		
-		// Register the event handler
+		// Calculate values and sets labels
 		calculate.setOnAction((event) -> {
 			input = Double.parseDouble(valField.getText()); // gets input from text box
 			
@@ -94,8 +94,8 @@ public class PropertyTax extends Application {
 			// set labels
 			assessVal.setText(Double.toString(assess));
 			taxVal.setText(Double.toString(tax));
-		});
+		}); // end lambda
 	
-	}
+	} // end start()
 	
 }

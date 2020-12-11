@@ -22,17 +22,15 @@ public class TextProcessing {
 		String removedString = removeCharacter(stringText, charInput);
 		int charCount = countKey(stringText, charInput);
 		
-
 		//printing results
 		System.out.println("\nString with " + charInput + " masked:\n" 
 							+ maskedString);
 		System.out.println("\nString with " + charInput
 							+ " removed:\n" + removedString);
 		System.out.println("\n# " + charInput + "s: " + charCount);
-		
-
 	}
 
+	
 	/* Method that returns key character used to search/replace
 	 * @return returns character input from user
 	 */
@@ -40,7 +38,6 @@ public class TextProcessing {
 		Scanner input = new Scanner(System.in);
 		int charLength;
 		String stringInput;
-		
 		
 		do {
 			System.out.println("Please enter a SINGLE "
@@ -51,7 +48,6 @@ public class TextProcessing {
 			// getting length to test
 	
 		} while (charLength != 1); //checking for invalid input
-		
 		
 		char charInput = stringInput.charAt(0);
 		return charInput;
@@ -66,7 +62,6 @@ public class TextProcessing {
 		String stringText;
 		Scanner input = new Scanner(System.in);
 		
-		
 		do {
 			System.out.println("Please enter a phrase or sentence >= 4"
 					+ " and <= 500 characters:");
@@ -74,7 +69,6 @@ public class TextProcessing {
 			
 			textLength = stringText.length(); //getting length of text
 		} while (textLength < MIN_SIZE); //checking for invalid input
-		
 		
 		return stringText;
 	}
@@ -88,26 +82,23 @@ public class TextProcessing {
 		int stringLength = stringText.length(); //getting length of text
 		String maskedString = ""; //initializing new String
 		
-		
 		for (int i = 0; i < stringLength; i++) { //looping through text
 			if (stringText.charAt(i) == charInput) { 
 				//checking if a character has key char.
 				maskedString += '$'; //add $ to returned text
 			}
 			
-			
-			else if (stringText.charAt(i) != charInput) {
+			else {
 				//if the character is not key
 				maskedString += stringText.charAt(i); 
 				//add original char. to return text
 			}
 		}
 		
-		
 		return maskedString; //returning masked text
 	}
 
-
+	
 	/*
 	 * Method that removed key character in text
 	 * @param takes String (Text) and Character (key char) as parameters
@@ -115,8 +106,7 @@ public class TextProcessing {
 	 */
 	public static String removeCharacter(String stringText, char charInput) {
 		int stringLength = stringText.length(); //getting length of text
-		String removedString = ""; //initializing new String
-		
+		String removedString = ""; //initializing new String	
 		
 		for (int i = 0; i < stringLength; i++) { //looping through text
 			if (stringText.charAt(i) != charInput) { //if the character is not key
@@ -124,7 +114,6 @@ public class TextProcessing {
 				//add original char. to return text
 			}
 		}
-		
 		
 		return removedString; //returning text w/ removed characters
 	}
@@ -138,14 +127,12 @@ public class TextProcessing {
 	public static int countKey(String stringText, char charInput) {
 		int stringLength = stringText.length(); //getting text length
 		int charCount = 0; //initializing text length
-
 		
 		for (int i = 0; i < stringLength; i++) { // loops through text
 			if (stringText.charAt(i) == charInput) { // if key char. matched
 				charCount++;
 			}
 		}
-
 		
 		return charCount;
 	}

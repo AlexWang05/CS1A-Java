@@ -18,46 +18,25 @@ public class FiveExpressions {
 		int myId = 20456413;   //storing my Foothill ID number in the myId variable
 		int numLet = 9;   //storing the number of letters in my first name (9)
 		
-		
 		System.out.println("My first name is Zhaozhong");   //printing required info
 		System.out.println("My student ID is " + myId);
 		System.out.println("The number of characters in my first name is " + numLet);
 		
-		
-		System.out.println();   //printing empty line for space
-		
-		
 		int intResult = myId % 17;   //calculating and storing value #1
-		System.out.println("Expression #1 --> " + intResult);
-		
-		
-		System.out.println();
-		
-		
+		System.out.println("\nExpression #1 --> " + intResult);
+
 		intResult = (numLet + 17) % 11;   //calculating and storing value #2
-		System.out.println("Expression #2 --> " + intResult);
-		
-		
-		System.out.println();
-		
-		
+		System.out.println("\nExpression #2 --> " + intResult);
+
 		double doubleResult = (double)myId / (numLet + 800);   //calculating and storing value #3
-		System.out.println("Expression #3 --> " + doubleResult);   
-		
-		
-		System.out.println();
-		
+		System.out.println("\nExpression #3 --> " + doubleResult);   
 		
 		intResult = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + numLet;   //calculating and storing value #4
-		System.out.println("Expression #4 --> " + intResult);   
-		
-		
-		System.out.println();
-		
-		
+		System.out.println("\nExpression #4 --> " + intResult);   
+
 		doubleResult = 15000 / (80 + ((myId - 123456) / ((numLet + 20) *
 				((double)numLet + 20))));   //calculating and storing value #5
-		System.out.println("Expression #5 --> " + doubleResult);
+		System.out.println("\nExpression #5 --> " + doubleResult);
 		
 		
 		/*SAMPLE RUN

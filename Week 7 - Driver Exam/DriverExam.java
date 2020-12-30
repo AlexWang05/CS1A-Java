@@ -1,10 +1,6 @@
 /*
-* Class: CS 1A
 * Description: Program that takes answers to an exam
-* 			grades them.
-* Due date: 11/10/2020
-* Name: Zhaozhong (Alex) Wang
-* File name: DriverExam.java
+* 		grades them.
 */
 
 import java.util.Scanner;
@@ -18,7 +14,6 @@ public class DriverExam {
 	static int[] missed = null; // initialize to null as instructed
 	static int numIncorrect = 0;
 	static int numCorrect = 0;
-	
 	
 	// method to get student's answers
 	public DriverExam(char[] s) {
@@ -49,7 +44,6 @@ public class DriverExam {
 		
 	} // end of constructor
 	
-	
 	// gradeExam method to grade exam
 	static void gradeExam() {
 		// determine number of incorrect
@@ -61,7 +55,6 @@ public class DriverExam {
 		} // end of for-loop
 		makeMissedArray();
 	}
-	 
 	
 	// stores question #'s that student missed
 	private static void makeMissedArray() {
@@ -79,24 +72,20 @@ public class DriverExam {
 		
 	} // end of makeMissedArray() Method
 	
-	
 	// method that returns if student passed the exam
 	public static boolean passed() {
 		return numCorrect >= 15;
 	}
-	
 	
 	// returns # of correct answers
 	public static int totalCorrect() {
 		return numCorrect;
 	}
 	
-	
 	// returns # of incorrect answers
 	public static int totalIncorrect() {
 		return numIncorrect;
 	}
-	
 	
 	// method that returns array of missed question #'s
 	public static int[] questionsMissed() {

@@ -1,14 +1,8 @@
 /*
- *Class: CS1A
-* Description: Assignment 10: A GUI Application that displays the assessment
-* 			value and property tax with a JavaFX User Interface
-* 
-* Due date: 12/04/2020
-* Name: Zhaozhong (Alex) Wang
-* File names: PropertyTax.java and README.doc
- */
+* Assignment 10: A GUI Application that displays the assessment
+* 		value and property tax with a JavaFX User Interface
+*/
 
-// import statements
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -20,9 +14,7 @@ import javafx.scene.layout.HBox;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 
-
 public class PropertyTax extends Application {
-	
 	//fields
 	private Label assessVal;
 	private Label taxVal;
@@ -95,7 +87,5 @@ public class PropertyTax extends Application {
 			assessVal.setText(Double.toString(assess));
 			taxVal.setText(Double.toString(tax));
 		}); // end lambda
-	
 	} // end start()
-	
 }

@@ -1,10 +1,6 @@
 /*
-* Class: CS 1A
 * Description: Program that takes answers to an exam
-* 			grades them.
-* Due date: 11/10/2020
-* Name: Zhaozhong (Alex) Wang
-* File name: DriverExam.java
+* 		grades them.
 */
 
 public class Foothill {

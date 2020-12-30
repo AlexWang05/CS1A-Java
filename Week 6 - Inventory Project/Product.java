@@ -1,9 +1,5 @@
 /*
-* Class: CS1A
-* Description: Assignment 6A: An inventory program used to
-* store a range of different school products
-* Due date: 11/02/2020
-* Name: Zhaozhong (Alex) Wang
+* Assignment 6A: An inventory program used to store a range of different school products
 * File names: Product.java and ProductTester.java
 */
 
@@ -17,9 +13,7 @@ public class Product {
 	private double price;
 	
 	// default constructor to initialize fields to default values
-	public Product() {
-
-	}
+	public Product() {}
 	
 	// overloaded constructor to initialize with values
 	public Product(int number, String name, int quantity, double price) {
@@ -75,5 +69,4 @@ public class Product {
 		return "itemNumber : " + number + "\nName : " + name + "\nQuantity in stock : " + quantity + "\nPrice : "
 				+ price + "\n";
 	} // end toString()
-
 } // end class Product

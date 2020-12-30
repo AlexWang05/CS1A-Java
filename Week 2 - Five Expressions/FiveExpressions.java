@@ -1,13 +1,7 @@
 /*
- * Class: CS1A
- * Description: Programming Assignment 2 Option A - Five Expressions:
- *              creating 2 integer variables and computing new values bases on the two numbers.
+ * Assignment 2A - Five Expressions: creating 2 integer variables and computing new values bases on the two numbers.
  *              Printing five values/expressions in output.
- * Due date: 10/5/2020
- * Name: Zhaozhong (Alex) Wang
- * File name: FiveExpressions.java
 */
-
 
 package fiveexpressions_week2;
 
@@ -57,5 +51,4 @@ public class FiveExpressions {
 		 */
 		
 	}
-
 }

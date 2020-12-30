@@ -1,16 +1,11 @@
 /*
-* Class: CS1A
-* Description: Assignment 6A: An inventory program used to
-* store a range of different school products
-* Due date: 11/02/2020
-* Name: Zhaozhong (Alex) Wang
-* File names: Product.java and ProductTester.java
+* Assignment 6A: An inventory program used to store a range of different school products
+* Files: Product.java and ProductTester.java
 */
 
 package inventory_week6;
 
 public class ProductTester {
-
 	public static void main(String[] args) {
 		// products created with default constructor
 		Product item1 = new Product();
@@ -64,5 +59,4 @@ public class ProductTester {
 		 * 
 		 */
 	}
-
 }

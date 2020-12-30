@@ -1,11 +1,7 @@
 /*
-* Class: CS1A
-* Description: Assignment 4: This program simulates a chocolate bar store
-* 				where buying a chocolate bar results in getting
-* 				a coupon, which could be used to buy more bars.
-* Due date: 10/23/2020
-* Name: Zhaozhong (Alex) Wang
-* File name: ChocolateCoupons.java
+* Assignment 4: This program simulates a chocolate bar store
+* 		where buying a chocolate bar results in getting
+* 		a coupon, which could be used to buy more bars.
 */
 
 
@@ -14,9 +10,7 @@ package chocolatecoupons_week4;
 import java.util.Scanner;
 
 public class ChocolateCoupons {
-
 	public static void main(String[] args) {
-		
 		final int COUPON_REQUIREMENT = 7; //declaring constant for coupon requirements
 		int couponBalance = 0; //initializing coupon balance
 		String purchaseChoice; //declaring required variables
@@ -64,7 +58,6 @@ public class ChocolateCoupons {
 					System.out.println("You qualify for a free chocolate bar. Would you like to use your credits? (Y or N) ");
 					String awardChoiceString = input.nextLine(); //reading as String so Scanner works
 					char awardChoice = awardChoiceString.charAt(0); //converting to char
-					
 					
 					if (Character.toLowerCase(awardChoice) == 'y') { //if user wants use coupons
 						couponBalance = couponBalance - COUPON_REQUIREMENT; //taking off coupons

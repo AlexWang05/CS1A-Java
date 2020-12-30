@@ -1,22 +1,15 @@
 /*
-* Class: CS1A
-* Description: Assignment 9: An inventory program used to
-* 	store a range of different products
-* Due date: 11/16/2020
-* Name: Zhaozhong (Alex) Wang
-* File names: Product.java and ProductTester.java
+* Assignment 9: An inventory program used to store a range of different products
 */
 
 import java.util.Scanner;
 
 public class ProductTester {
-
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in); // Scanner object
 		
 		// variable declaration
 		int maxSize, menuChoice;
-		
 		
 		// information prompt and input validation
 		do {
@@ -26,9 +19,7 @@ public class ProductTester {
 			
 			if (maxSize < 0) // checking for invalid input
 				System.out.println("Incorrect Value entered!");
-			
 		} while (maxSize < 0);
-		
 		
 		// checking if user does not want to enter products
 		if (maxSize == 0)
@@ -45,12 +36,12 @@ public class ProductTester {
 				executeMenuChoice(menuChoice, products, input);
 			} while (menuChoice != 0);
 		} // end else
-		
 	}// end main method
 	
 	
-	// executeMenuChoice method
-	// @param menu choice, products array, Scanner object
+	/** executeMenuChoice method
+	 * @param menu choice, products array, Scanner object
+	 */
 	public static void executeMenuChoice(int choice, Product[] products, 
 			Scanner input) {
 		
@@ -77,9 +68,10 @@ public class ProductTester {
 	} // end executeMenuChoice()
 	
 
-	// getMenuOption method (menu system)
-	// @param Scanner object
-	// @return integer menu choice chosen by user
+	/** getMenuOption method (menu system)
+	 * @param Scanner object
+	 * @return integer menu choice chosen by user
+	 */
 	public static int getMenuOption(Scanner input) {
 		int choice;
 		
@@ -95,9 +87,9 @@ public class ProductTester {
 	} // end getMenuOption()
 	
 	
-	// getProductNumber method (displays index of array and name of products)
-	// @param products array and Scanner object
-	// @return integer value
+	/** getProductNumber method (displays index of array and name of products)
+	 * @param products array and Scanner object
+	*/ @return integer value
 	public static int getProductNumber(Product[] products, Scanner input) {
 		int productChoice = -1; // local variable of product choice
 		
@@ -116,13 +108,13 @@ public class ProductTester {
 		// choice input validation
 		} while (productChoice < 0 || productChoice > products.length - 1);
 		
-		
 		return productChoice;
 	} // end getProductNumber()
 	
 	
-	// addInventory method (add stock values to product)
-	// @param products array and Scanner object
+	/** addInventory method (add stock values to product)
+	 * @param products array and Scanner object
+	 */
 	public static void addInventory(Product[] products, Scanner input) {
 		int productChoice, updateValue = -1; // local variables
 		
@@ -142,8 +134,9 @@ public class ProductTester {
 	} // end addInventory()
 	
 	
-	// deductInventory method (deduct values to product)
-	// @param product array and Scanner object
+	/** deductInventory method (deduct values to product)
+	 * @param product array and Scanner object
+	 */
 	public static void deductInventory(Product[] products, Scanner input) {
 		int productChoice, updateValue = -1;
 		
@@ -162,8 +155,9 @@ public class ProductTester {
 	} // end deductInventory()
 	
 	
-	// discontinueInventory method to mark stock as discontinued
-	// @param products array and Scanner object
+	/** discontinueInventory method to mark stock as discontinued
+	 * @param products array and Scanner object
+	 */
 	public static void discontinueInventory(Product[] products, Scanner input) {
 		int productChoice;
 		
@@ -174,8 +168,9 @@ public class ProductTester {
 	} // end discontinueInventory()
 	
 
-	// addToInventory method (adds products to inventory)
-	// @param products array and Scanner
+	/** addToInventory method (adds products to inventory)
+	 * @param products array and Scanner
+	 */
 	public static void addToInventory(Product[] products, Scanner input) {
 		String tempName; // variables needed
 		int tempQty, tempNumber;
@@ -203,14 +198,14 @@ public class ProductTester {
 	} // end addToInventory method
 	
 	
-	// displayInventory method (displays inventory)
-	// @param products array
+	/** displayInventory method (displays inventory)
+	 * @param products array
+	 */
 	public static void displayInventory(Product[] products) {
 		// for-each loop to display inventory
 		for (Product item : products) {
 			System.out.println(item);
 		}
-
 	} // end displayInventory method
 	
 	

@@ -1,14 +1,16 @@
-/*
-* Description: Program that takes answers to an exam
-* 		grades them.
-*/
+package driverexam_week7;
+
+import java.util.Scanner;
 
 public class Foothill {
 	public static void main(String[] args) {
-		char[] s = new char[DriverExam.ANSWER_SIZE]; // student answer array
+		// gets student answers
+		char[] student = exam();
 		
-		DriverExam exam = new DriverExam(s);
+		// DriverExam object
+		DriverExam studentExam = new DriverExam(student);
 		
+		// calculations with methods
 		DriverExam.gradeExam();
 		int correct = DriverExam.totalCorrect();
 		int incorrect = DriverExam.totalIncorrect();
@@ -18,7 +20,7 @@ public class Foothill {
 		System.out.println("Correct answers: " + correct);
 		System.out.println("Incorrect answers: " + incorrect);
 		
-		if (DriverExam.passed())
+		if (studentExam.passed())
 			System.out.println("You passed the exam.");
 		else
 			System.out.println("You failed the exam.");
@@ -27,8 +29,44 @@ public class Foothill {
 		
 		for (int i : missed)
 			System.out.print(i + " ");
+
 	}
-	
+
+	/**
+	 * This method gets exam answers from the user
+	 * 
+	 * @return char[] containing student exam answers
+	 */
+	public static char[] exam() {
+		Scanner input = new Scanner(System.in);
+
+		// printing required info
+		System.out.println("Enter your answers to the exam questions." + "(Make sure Caps Lock is ON!)");
+
+		char[] student = new char[DriverExam.ANSWER_SIZE];
+
+		// for-loop to loop through questions
+		for (int i = 1; i <= student.length; i++) {
+			System.out.printf("Question %d: ", i);
+			char studentAnswer = input.next().charAt(0);
+
+			// input validation
+			while (studentAnswer != 'A' && studentAnswer != 'B' && studentAnswer != 'C' && studentAnswer != 'D') {
+				System.out.println("ERROR: Valid answers are A, B, C, or D.");
+				System.out.printf("Question %d: ", i);
+				studentAnswer = input.next().charAt(0);
+			}
+			
+			// assigns answer into array
+			student[i - 1] = studentAnswer;
+		
+		} // end for
+
+		input.close();
+
+		return student;
+	} // end method
+		
 	/*
 	 * ------SAMPLE RUN------
 	 * Enter your answers to the exam questions.(Make sure Caps Lock is ON!)

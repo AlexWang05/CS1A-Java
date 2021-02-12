@@ -1,5 +1,3 @@
-### The code for this assignment has serious errors.
+# Programming Assignment 7 - Driver Exam
 
-don't be like me, don't but a Scanner object in a constructor. I didn't know what I was doing
-
-~I'm too lazy to fix it~ I want to keep it for reference, I guess you will just have to look at my dumb code.
+This assignment gave me practice with classes, objects, and arrays, and UML Diagrams.

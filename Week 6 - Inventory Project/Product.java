@@ -1,6 +1,6 @@
 /*
-* Assignment 6A: An inventory program used to store a range of different school products
-* File names: Product.java and ProductTester.java
+* Assignment 6: An inventory program used to
+* store a range of different school products
 */
 
 package inventory_week6;
@@ -11,10 +11,12 @@ public class Product {
 	private String name;
 	private int quantity;
 	private double price;
-	
+
 	// default constructor to initialize fields to default values
-	public Product() {}
-	
+	public Product() {
+
+	}
+
 	// overloaded constructor to initialize with values
 	public Product(int number, String name, int quantity, double price) {
 		this.number = number;
@@ -27,7 +29,7 @@ public class Product {
 	public int getNumber() {
 		return number;
 	}
-	
+
 	// mutator for item number
 	public void setNumber(int number) {
 		this.number = number;
@@ -37,17 +39,17 @@ public class Product {
 	public String getName() {
 		return name;
 	}
-	
+
 	// mutator for product name
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	// accessor for quantity of units
 	public int getQuantity() {
 		return quantity;
 	}
-	
+
 	// mutator for quantity of units
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
@@ -57,16 +59,17 @@ public class Product {
 	public double getPrice() {
 		return price;
 	}
-	
+
 	// mutator for item prices
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	// toString() method to return instance field values
+
+	// returns instance field values
 	@Override
 	public String toString() {
 		return "itemNumber : " + number + "\nName : " + name + "\nQuantity in stock : " + quantity + "\nPrice : "
 				+ price + "\n";
-	} // end toString()
+	}
+
 } // end class Product

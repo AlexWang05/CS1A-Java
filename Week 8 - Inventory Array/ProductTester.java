@@ -1,11 +1,8 @@
 /*
-* Class: CS1A
-* Description: Assignment 8: An inventory program used to
-* 	store a range of differet products
-* Due date: 11/16/2020
-* Name: Zhaozhong (Alex) Wang
-* File names: Product.java and ProductTester.java
+* Assignment 8: An inventory program used to store a range of different products
 */
+
+package inventory2_week8;
 
 import java.util.Scanner;
 
@@ -43,19 +40,23 @@ public class ProductTester {
 			displayInventory(products);
 		}
 		
-	}// end main method
+	} // end main
 	
 	
-	// addToInventory method
-	// @param products array and Scanner
+	/**
+	 * addToInventory method (adds products to inventory)
+	 * 
+	 * @param products array
+	 * @param input - Scanner object
+	 */
 	public static void addToInventory(Product[] products, Scanner input) {
-		String tempName; // variables needed
+		String tempName; // variable declaration
 		int tempQty, tempNumber;
 		double tempPrice;
 		
-		// for-loop to loop through the array
+		// for-loop to loop through array
 		for (int i = 0; i < products.length; i++) {
-			// getting user input
+			// user input
 			System.out.println("\nPlease enter the product name: ");
 			tempName = input.next();
 			
@@ -72,18 +73,21 @@ public class ProductTester {
 			products[i] = new Product(tempNumber, tempName, tempQty, tempPrice);
 		}
 		
-	} // end addToInventory method
+	} // end addToInventory
 	
 	
-	// displayInventory method
-	// @param products array
+	/**
+	 * displayInventory method (displays inventory)
+	 * 
+	 * @param products array
+	 */
 	public static void displayInventory(Product[] products) {
 		// for-each loop to display inventory
 		for (Product item : products) {
 			System.out.println(item);
 		}
 
-	} // displayInventory method
+	} // end displayInventory
 	
 	
 	/*

@@ -18,7 +18,8 @@ public class DriverExam {
 	// constructor for DriverExam object
 	public DriverExam(char[] student) {
 		// copies elements of student array
-		for (int i = 0; i < student.length; i++) {			this.student[i] = student[i];
+		for (int i = 0; i < student.length; i++) {
+			this.student[i] = student[i];
 		}
 	}
 

@@ -53,6 +53,8 @@ public class Foothill {
 			// input validation
 			while (studentAnswer != 'A' && studentAnswer != 'B' && studentAnswer != 'C' && studentAnswer != 'D') {
 				System.out.println("ERROR: Valid answers are A, B, C, or D.");
+				
+				// re-prompt question
 				System.out.printf("Question %d: ", i);
 				studentAnswer = input.next().charAt(0);
 			}

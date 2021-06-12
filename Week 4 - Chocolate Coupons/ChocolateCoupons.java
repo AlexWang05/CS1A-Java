@@ -1,65 +1,62 @@
-/*
-* Assignment 4: This program simulates a chocolate bar store
-* 		where buying a chocolate bar results in getting
-* 		a coupon, which could be used to buy more bars.
-*/
-
-package chocolatecoupons_week4;
+/**
+ * Assignment 4
+ * This program simulates a chocolate bar store's coupon system
+ * 
+ * @author Alex Wang
+ */
 
 import java.util.Scanner;
 
 public class ChocolateCoupons {
-
 	public static void main(String[] args) {
-
-		final int COUPON_REQUIREMENT = 7; // constant for coupon requirements
-		int couponBalance = 0; // initializing coupon balance
-		char charChoice = 'p'; // required variables
+		final int COUPON_REQUIREMENT = 7; // coupon requirement constant
+		int couponBalance = 0; // initialize coupon balance
+		char charChoice = 'p';
 		String purchaseChoice;
 
 		Scanner input = new Scanner(System.in); // scanner object
 
-		while (true) { // used to repeat menu (shut down is checked later in the loop)
+		while (true) { // used to repeat menu, shut down checked later in loop
 			System.out.println("Menu:\nP (process Purchase)" + "\nS (Shut down)");
-			purchaseChoice = input.nextLine(); // exact input
+			purchaseChoice = input.nextLine();
 
 			// getting first character and converting to lower case
 			charChoice = Character.toLowerCase(purchaseChoice.charAt(0));
 
-			System.out.println("Your choice: " + purchaseChoice); // displaying choice
+			System.out.println("Your choice: " + purchaseChoice); // display choice
 
 			if (charChoice == 's') { // shutdown check
 				System.out.println("System shutting down.\n\n" + "Good bye");
-				break; // ends the loop & program
+				break; // ends the loop and program
 			}
 
 			else if (charChoice != 'p') { // invalid response filter
 				System.out.println("*** Use P or S, please. ***\n");
 			}
 
-			else { // if purchase option is chosen
+			else { // purchase option
 				if (couponBalance < 7) { // starting normal transaction
 					System.out.println("How many chocolate bars would you like to buy?");
-					String barString = input.nextLine(); // getting # of bars bought as String
-					int barNumber = Integer.parseInt(barString); // converting to integer
+					String barString = input.nextLine(); // number of bars
+					int barNumber = Integer.parseInt(barString); // convert to integer
 
-					if (barNumber >= 0) { // checking for valid number inputs
-						couponBalance += barNumber; // adding new coupons
+					if (barNumber >= 0) { // valid input check
+						couponBalance += barNumber; // add new coupons
+						
+						// display coupons and balance
 						System.out.println("You just earned " + barNumber + " coupons and have a total of "
 								+ couponBalance + " to use.\n");
-						// displaying coupons acquired and total coupons
 					}
 
-					else {
+					else { // negative bar number
 						System.out.println("*** Invalid response ***");
 					}
-				} // end normal transaction if-statement
+				} // end normal transaction if
 
 				else { // starting award transaction
-					System.out.println(
-							"You qualify for a free chocolate bar. Would you like to use your credits? (Y or N) ");
-					String awardChoiceString = input.nextLine(); // reading as String so Scanner works
-					char awardChoice = awardChoiceString.charAt(0); // converting to char
+					System.out.println("You qualify for a free chocolate bar. Would you like to use your credits? (Y or N) ");
+					String awardChoiceString = input.nextLine();
+					char awardChoice = awardChoiceString.charAt(0); // char choice
 
 					if (Character.toLowerCase(awardChoice) == 'y') { // use coupons
 						couponBalance = couponBalance - COUPON_REQUIREMENT; // remove coupons
@@ -67,11 +64,11 @@ public class ChocolateCoupons {
 								+ couponBalance + " left.\nEnjoy your free chocolate bar.\n");
 					}
 
-					else if (Character.toLowerCase(awardChoice) == 'n') { // normal transaction
+					else if (Character.toLowerCase(awardChoice) == 'n') { // don't use coupons
 						System.out.println("How many chocolate bars would you like to buy?");
 						String barString = input.nextLine();
 
-						int barNumber = Integer.parseInt(barString); // converting to integer
+						int barNumber = Integer.parseInt(barString);
 
 						if (barNumber >= 0) { // valid input check
 							couponBalance += barNumber; // add new coupons
@@ -82,14 +79,14 @@ public class ChocolateCoupons {
 						else // invalid input filter
 							System.out.println("*** Invalid response ***");
 
-					} // end normal transaction in award transaction
+					} // end normal transaction
 
 					else // invalid response filter
 						System.out.println("*** Invalid response ***\n");
 
 				} // end award transaction
 			} // end purchase option
-		} // end main while loop
+		} // end while()
 
 		/*-----------SAMPLE RUN 1------------
 		 * Menu:

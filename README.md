@@ -2,4 +2,6 @@
 
 Hello! Welcome to my Code Collection for my CS1A course at *Unnamed College*!
 
-Thanks for reading, have fun viewing my code!
+Please note that proper file structures are not used for ease of viewing on Github.
+
+Thanks for reading!

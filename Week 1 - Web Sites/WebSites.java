@@ -1,8 +1,8 @@
-/* 
- * Printing 3 websites with names and URL
+/**
+ * Print 3 website names and URLs
+ * 
+ * @author Alex Wang
  */
-
-package websites_week1; 
 
 public class WebSites { 
 	public static void main(String[] args) {

@@ -1,21 +1,20 @@
-/*
-* Assignment 6: An inventory program used to
-* store a range of different school products
+/**
+* Assignment 6
+* An inventory program used to store a range of different school products
+* 
+* @author Alex Wang
 */
 
-package inventory_week6;
 
 public class Product {
-	// Instance field declarations
+	// instance field declarations
 	private int number;
 	private String name;
 	private int quantity;
 	private double price;
 
 	// default constructor to initialize fields to default values
-	public Product() {
-
-	}
+	public Product() {}
 
 	// overloaded constructor to initialize with values
 	public Product(int number, String name, int quantity, double price) {
@@ -65,7 +64,7 @@ public class Product {
 		this.price = price;
 	}
 
-	// returns instance field values
+	// returns inventory String to print on console
 	@Override
 	public String toString() {
 		return "itemNumber : " + number + "\nName : " + name + "\nQuantity in stock : " + quantity + "\nPrice : "

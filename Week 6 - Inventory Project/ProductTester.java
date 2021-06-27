@@ -1,9 +1,10 @@
-/*
- * Assignment 6: An inventory program used to
- * store a range of different school products
- */
+/**
+* Assignment 6
+* An inventory program used to store a range of different school products
+* 
+* @author Alex Wang
+*/
 
-package inventory_week6;
 
 public class ProductTester {
 
